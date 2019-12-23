@@ -1,5 +1,5 @@
 <template>
-  <div class="container flex-jsb">
+  <div class="container flex-jsb" :style="{width:isActive ? 'calc(100% - 64px)':'calc(100% - 200px)'}">
     <div class="flex flex-ac">
       <i
         :class="{ 'is-active': isActive }"
@@ -72,9 +72,11 @@ export default {
 .container {
   height: 50px;
   background: #fff;
-  position: relative;
+  position: fixed;
   box-shadow: 0 1px 4px rgba(0, 21, 48, 0.08);
   padding: 0 20px;
+  transition: width .28s;
+  top: 0;
 }
 .hamburger {
   font-size: 20px;

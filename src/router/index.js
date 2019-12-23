@@ -12,7 +12,7 @@ const routes = [
     redirect: '/main',
     children: [
       { path: '/main', name: 'Main', meta: { title: '数据统计' }, component: () => import('@/views/Main') },
-      { path: '/users', meta: { title: '会员管理' }, component: () => import('@/views/user/Users') }
+      { path: '/users', meta: { title: '会员列表' }, component: () => import('@/views/user/Users') }
     ]
   },
   {

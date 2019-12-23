@@ -33,7 +33,6 @@ export default {
       }
 
       this.list = matched.filter(item => item.meta && item.meta.title && item.meta.breadcrumb !== false)
-      console.log(this.list)
     },
     isMain (route) {
       const name = route && route.name

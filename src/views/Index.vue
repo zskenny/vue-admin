@@ -1,6 +1,6 @@
 <template>
   <el-container>
-    <el-aside :width="sidebar.opened ? '200px' : '64px'">
+    <el-aside class="side-container" :width="sidebar.opened ? '200px' : '64px'">
       <el-scrollbar wrap-class="scrollbar-wrapper">
         <el-menu
           background-color="#304156"
@@ -61,6 +61,7 @@
       </el-scrollbar>
     </el-aside>
     <el-main>
+      <el-scrollbar wrap-class="scrollbar-wrapper">
       <nav-bar
         :is-active="!sidebar.opened"
         @toggleClick="toggleSideBar"
@@ -70,6 +71,7 @@
           <router-view :key="key"></router-view>
         </transition>
       </section>
+      </el-scrollbar>
     </el-main>
   </el-container>
 </template>
@@ -148,8 +150,12 @@ body{
   background: #f8f8f8;
   padding: 0;
 }
+.side-container {
+  transition: width .28s;
+}
 .app-main{
   padding:10px;
   font-size: 14px;
+  margin-top: 50px;
 }
 </style>
